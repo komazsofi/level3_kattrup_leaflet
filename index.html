@@ -1,0 +1,902 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        #map {
+            width: 1541px;
+            height: 848px;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/Manual_openwet_std30y_ndvip10_level3b_1.js"></script>
+        <script src="data/Manual_opendry_std30y_ndvip10_level3a_2.js"></script>
+        <script src="data/Level3b_openwet_kattrup_dist10shp_3.js"></script>
+        <script src="data/Level3a_opendry_kattrup_dist20shp_4.js"></script>
+        <script src="data/Level3b_openwet_dist20shp_5.js"></script>
+        <script src="data/Level3a_opendry_dist20shp_6.js"></script>
+        <script src="data/polygoner_irina_7.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[55.58871622460119,11.264676845842802],[55.64772234325011,11.44665387897659]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        map.createPane('pane_google_0');
+        map.getPane('pane_google_0').style.zIndex = 400;
+        var layer_google_0 = L.tileLayer('http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}', {
+            pane: 'pane_google_0',
+            opacity: 1.0,
+            attribution: '',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 18
+        });
+        layer_google_0;
+        map.addLayer(layer_google_0);
+        function pop_Manual_openwet_std30y_ndvip10_level3b_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DN'] !== null ? autolinker.link(feature.properties['DN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Manual_openwet_std30y_ndvip10_level3b_1_0(feature) {
+            switch(String(feature.properties['DN'])) {
+                case '11':
+                    return {
+                pane: 'pane_Manual_openwet_std30y_ndvip10_level3b_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(122,230,205,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '12':
+                    return {
+                pane: 'pane_Manual_openwet_std30y_ndvip10_level3b_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(120,140,105,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '21':
+                    return {
+                pane: 'pane_Manual_openwet_std30y_ndvip10_level3b_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(187,234,233,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '22':
+                    return {
+                pane: 'pane_Manual_openwet_std30y_ndvip10_level3b_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(119,145,146,1.0)',
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Manual_openwet_std30y_ndvip10_level3b_1');
+        map.getPane('pane_Manual_openwet_std30y_ndvip10_level3b_1').style.zIndex = 401;
+        map.getPane('pane_Manual_openwet_std30y_ndvip10_level3b_1').style['mix-blend-mode'] = 'normal';
+        var layer_Manual_openwet_std30y_ndvip10_level3b_1 = new L.geoJson(json_Manual_openwet_std30y_ndvip10_level3b_1, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Manual_openwet_std30y_ndvip10_level3b_1',
+            layerName: 'layer_Manual_openwet_std30y_ndvip10_level3b_1',
+            pane: 'pane_Manual_openwet_std30y_ndvip10_level3b_1',
+            onEachFeature: pop_Manual_openwet_std30y_ndvip10_level3b_1,
+            style: style_Manual_openwet_std30y_ndvip10_level3b_1_0,
+        });
+        bounds_group.addLayer(layer_Manual_openwet_std30y_ndvip10_level3b_1);
+        function pop_Manual_opendry_std30y_ndvip10_level3a_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['DN'] !== null ? autolinker.link(feature.properties['DN'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Manual_opendry_std30y_ndvip10_level3a_2_0(feature) {
+            switch(String(feature.properties['DN'])) {
+                case '11':
+                    return {
+                pane: 'pane_Manual_opendry_std30y_ndvip10_level3a_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(104,230,152,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '12':
+                    return {
+                pane: 'pane_Manual_opendry_std30y_ndvip10_level3a_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(33,146,60,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '21':
+                    return {
+                pane: 'pane_Manual_opendry_std30y_ndvip10_level3a_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(17,226,233,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '22':
+                    return {
+                pane: 'pane_Manual_opendry_std30y_ndvip10_level3a_2',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(25,136,255,1.0)',
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Manual_opendry_std30y_ndvip10_level3a_2');
+        map.getPane('pane_Manual_opendry_std30y_ndvip10_level3a_2').style.zIndex = 402;
+        map.getPane('pane_Manual_opendry_std30y_ndvip10_level3a_2').style['mix-blend-mode'] = 'normal';
+        var layer_Manual_opendry_std30y_ndvip10_level3a_2 = new L.geoJson(json_Manual_opendry_std30y_ndvip10_level3a_2, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Manual_opendry_std30y_ndvip10_level3a_2',
+            layerName: 'layer_Manual_opendry_std30y_ndvip10_level3a_2',
+            pane: 'pane_Manual_opendry_std30y_ndvip10_level3a_2',
+            onEachFeature: pop_Manual_opendry_std30y_ndvip10_level3a_2,
+            style: style_Manual_opendry_std30y_ndvip10_level3a_2_0,
+        });
+        bounds_group.addLayer(layer_Manual_opendry_std30y_ndvip10_level3a_2);
+        function pop_Level3b_openwet_kattrup_dist10shp_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2"><strong>Class</strong><br />' + (feature.properties['Class'] !== null ? autolinker.link(feature.properties['Class'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Level3b_openwet_kattrup_dist10shp_3_0(feature) {
+            switch(String(feature.properties['Class'])) {
+                case '11.0':
+                    return {
+                pane: 'pane_Level3b_openwet_kattrup_dist10shp_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(163,224,196,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '12.0':
+                    return {
+                pane: 'pane_Level3b_openwet_kattrup_dist10shp_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(37,114,91,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '21.0':
+                    return {
+                pane: 'pane_Level3b_openwet_kattrup_dist10shp_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(168,235,232,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '22.0':
+                    return {
+                pane: 'pane_Level3b_openwet_kattrup_dist10shp_3',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,146,147,1.0)',
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Level3b_openwet_kattrup_dist10shp_3');
+        map.getPane('pane_Level3b_openwet_kattrup_dist10shp_3').style.zIndex = 403;
+        map.getPane('pane_Level3b_openwet_kattrup_dist10shp_3').style['mix-blend-mode'] = 'normal';
+        var layer_Level3b_openwet_kattrup_dist10shp_3 = new L.geoJson(json_Level3b_openwet_kattrup_dist10shp_3, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Level3b_openwet_kattrup_dist10shp_3',
+            layerName: 'layer_Level3b_openwet_kattrup_dist10shp_3',
+            pane: 'pane_Level3b_openwet_kattrup_dist10shp_3',
+            onEachFeature: pop_Level3b_openwet_kattrup_dist10shp_3,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Level3b_openwet_kattrup_dist10shp_3_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Level3b_openwet_kattrup_dist10shp_3);
+        map.addLayer(layer_Level3b_openwet_kattrup_dist10shp_3);
+        function pop_Level3a_opendry_kattrup_dist20shp_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">ID</th>\
+                        <td>' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Class'] !== null ? autolinker.link(feature.properties['Class'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Level3a_opendry_kattrup_dist20shp_4_0(feature) {
+            switch(String(feature.properties['Class'])) {
+                case '11.0':
+                    return {
+                pane: 'pane_Level3a_opendry_kattrup_dist20shp_4',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(126,241,77,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '12.0':
+                    return {
+                pane: 'pane_Level3a_opendry_kattrup_dist20shp_4',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(25,137,34,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '21.0':
+                    return {
+                pane: 'pane_Level3a_opendry_kattrup_dist20shp_4',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(32,237,240,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '22.0':
+                    return {
+                pane: 'pane_Level3a_opendry_kattrup_dist20shp_4',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(33,129,255,1.0)',
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Level3a_opendry_kattrup_dist20shp_4');
+        map.getPane('pane_Level3a_opendry_kattrup_dist20shp_4').style.zIndex = 404;
+        map.getPane('pane_Level3a_opendry_kattrup_dist20shp_4').style['mix-blend-mode'] = 'normal';
+        var layer_Level3a_opendry_kattrup_dist20shp_4 = new L.geoJson(json_Level3a_opendry_kattrup_dist20shp_4, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Level3a_opendry_kattrup_dist20shp_4',
+            layerName: 'layer_Level3a_opendry_kattrup_dist20shp_4',
+            pane: 'pane_Level3a_opendry_kattrup_dist20shp_4',
+            onEachFeature: pop_Level3a_opendry_kattrup_dist20shp_4,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Level3a_opendry_kattrup_dist20shp_4_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Level3a_opendry_kattrup_dist20shp_4);
+        map.addLayer(layer_Level3a_opendry_kattrup_dist20shp_4);
+        function pop_Level3b_openwet_dist20shp_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Class'] !== null ? autolinker.link(feature.properties['Class'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Level3b_openwet_dist20shp_5_0(feature) {
+            switch(String(feature.properties['Class'])) {
+                case '11':
+                    return {
+                pane: 'pane_Level3b_openwet_dist20shp_5',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(163,224,196,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '12':
+                    return {
+                pane: 'pane_Level3b_openwet_dist20shp_5',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(37,114,91,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '21':
+                    return {
+                pane: 'pane_Level3b_openwet_dist20shp_5',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(168,235,232,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '22':
+                    return {
+                pane: 'pane_Level3b_openwet_dist20shp_5',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(125,146,147,1.0)',
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Level3b_openwet_dist20shp_5');
+        map.getPane('pane_Level3b_openwet_dist20shp_5').style.zIndex = 405;
+        map.getPane('pane_Level3b_openwet_dist20shp_5').style['mix-blend-mode'] = 'normal';
+        var layer_Level3b_openwet_dist20shp_5 = new L.geoJson(json_Level3b_openwet_dist20shp_5, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Level3b_openwet_dist20shp_5',
+            layerName: 'layer_Level3b_openwet_dist20shp_5',
+            pane: 'pane_Level3b_openwet_dist20shp_5',
+            onEachFeature: pop_Level3b_openwet_dist20shp_5,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Level3b_openwet_dist20shp_5_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Level3b_openwet_dist20shp_5);
+        map.addLayer(layer_Level3b_openwet_dist20shp_5);
+        function pop_Level3a_opendry_dist20shp_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['ID'] !== null ? autolinker.link(feature.properties['ID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Class'] !== null ? autolinker.link(feature.properties['Class'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Level3a_opendry_dist20shp_6_0(feature) {
+            switch(String(feature.properties['Class'])) {
+                case '11':
+                    return {
+                pane: 'pane_Level3a_opendry_dist20shp_6',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(126,241,77,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '12':
+                    return {
+                pane: 'pane_Level3a_opendry_dist20shp_6',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(25,137,34,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '21':
+                    return {
+                pane: 'pane_Level3a_opendry_dist20shp_6',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(32,237,240,1.0)',
+                interactive: false,
+            }
+                    break;
+                case '22':
+                    return {
+                pane: 'pane_Level3a_opendry_dist20shp_6',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(33,129,255,1.0)',
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Level3a_opendry_dist20shp_6');
+        map.getPane('pane_Level3a_opendry_dist20shp_6').style.zIndex = 406;
+        map.getPane('pane_Level3a_opendry_dist20shp_6').style['mix-blend-mode'] = 'normal';
+        var layer_Level3a_opendry_dist20shp_6 = new L.geoJson(json_Level3a_opendry_dist20shp_6, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_Level3a_opendry_dist20shp_6',
+            layerName: 'layer_Level3a_opendry_dist20shp_6',
+            pane: 'pane_Level3a_opendry_dist20shp_6',
+            onEachFeature: pop_Level3a_opendry_dist20shp_6,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.circleMarker(latlng, style_Level3a_opendry_dist20shp_6_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Level3a_opendry_dist20shp_6);
+        map.addLayer(layer_Level3a_opendry_dist20shp_6);
+        function pop_polygoner_irina_7(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Name'] !== null ? autolinker.link(feature.properties['Name'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Descriptio'] !== null ? autolinker.link(feature.properties['Descriptio'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Species'] !== null ? autolinker.link(feature.properties['Species'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Historik'] !== null ? autolinker.link(feature.properties['Historik'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Hotspot'] !== null ? autolinker.link(feature.properties['Hotspot'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_polygoner_irina_7_0(feature) {
+            switch(String(feature.properties['Historik'])) {
+                case '"Dyrket" i 2022':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(167,224,45,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Agerjord frem til ca. 2010.':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(122,203,196,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Agerjord frem til ca. 2010. Tilplantet omkring 2015.':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(122,203,196,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Arealet var dyrket i 1950erne, men braklagt siden starten af 1990erne (eller tidligere).':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(70,209,142,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Dyrket  i 1954':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(233,233,46,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Dyrket frem til 2021.':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(167,224,45,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Dyrket i 2022':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(167,224,45,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Har aldrig været dyrket':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(229,95,77,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Skov frem til 2007-08 - derefter ryddet.':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(51,160,44,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Udyrket min. siden 1990erne. (Dyrket i 1954 - bortset fra den lavtliggende del mod nordvest).':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(206,180,64,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Udyrket min. siden 1990erne. (Dyrket i 1954 - bortset fra den nordlige del).':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(206,180,64,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Udyrket min. siden 1990erne. (Dyrket i 1954 - bortset fra det lille område, hvor der blev gravet grus e.l.).':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(206,180,64,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Udyrket min. siden 1990erne. (Dyrket i 1954, i hvert fald størstedelen).':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(206,180,64,1.0)',
+                interactive: false,
+            }
+                    break;
+                case 'Udyrket min. siden 1990erne. (Dyrket i 1954).':
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(206,180,64,1.0)',
+                interactive: false,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_polygoner_irina_7',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(140,130,216,1.0)',
+                interactive: false,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_polygoner_irina_7');
+        map.getPane('pane_polygoner_irina_7').style.zIndex = 407;
+        map.getPane('pane_polygoner_irina_7').style['mix-blend-mode'] = 'normal';
+        var layer_polygoner_irina_7 = new L.geoJson(json_polygoner_irina_7, {
+            attribution: '',
+            interactive: false,
+            dataVar: 'json_polygoner_irina_7',
+            layerName: 'layer_polygoner_irina_7',
+            pane: 'pane_polygoner_irina_7',
+            onEachFeature: pop_polygoner_irina_7,
+            style: style_polygoner_irina_7_0,
+        });
+        bounds_group.addLayer(layer_polygoner_irina_7);
+        var baseMaps = {};
+        L.control.layers(baseMaps,{'polygoner_irina<br /><table><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Dyrketi20220.png" /></td><td>"Dyrket" i 2022</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Agerjordfremtilca20101.png" /></td><td>Agerjord frem til ca. 2010.</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Agerjordfremtilca2010Tilplantetomkring20152.png" /></td><td>Agerjord frem til ca. 2010. Tilplantet omkring 2015.</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Arealetvardyrketi1950ernemenbraklagtsidenstartenaf1990erneellertidligere3.png" /></td><td>Arealet var dyrket i 1950erne, men braklagt siden starten af 1990erne (eller tidligere).</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Dyrketi19544.png" /></td><td>Dyrket  i 1954</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Dyrketfremtil20215.png" /></td><td>Dyrket frem til 2021.</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Dyrketi20226.png" /></td><td>Dyrket i 2022</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Haraldrigværetdyrket7.png" /></td><td>Har aldrig været dyrket</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Skovfremtil200708derefterryddet8.png" /></td><td>Skov frem til 2007-08 - derefter ryddet.</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Udyrketminsiden1990erneDyrketi1954bortsetfradenlavtliggendedelmodnordvest9.png" /></td><td>Udyrket min. siden 1990erne. (Dyrket i 1954 - bortset fra den lavtliggende del mod nordvest).</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Udyrketminsiden1990erneDyrketi1954bortsetfradennordligedel10.png" /></td><td>Udyrket min. siden 1990erne. (Dyrket i 1954 - bortset fra den nordlige del).</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Udyrketminsiden1990erneDyrketi1954bortsetfradetlilleområdehvorderblevgravetgrusel11.png" /></td><td>Udyrket min. siden 1990erne. (Dyrket i 1954 - bortset fra det lille område, hvor der blev gravet grus e.l.).</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Udyrketminsiden1990erneDyrketi1954ihvertfaldstørstedelen12.png" /></td><td>Udyrket min. siden 1990erne. (Dyrket i 1954, i hvert fald størstedelen).</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_Udyrketminsiden1990erneDyrketi195413.png" /></td><td>Udyrket min. siden 1990erne. (Dyrket i 1954).</td></tr><tr><td style="text-align: center;"><img src="legend/polygoner_irina_7_14.png" /></td><td></td></tr></table>': layer_polygoner_irina_7,'Level3a_opendry_dist20.shp<br /><table><tr><td style="text-align: center;"><img src="legend/Level3a_opendry_dist20shp_6_110000000000000000.png" /></td><td>11,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3a_opendry_dist20shp_6_120000000000000001.png" /></td><td>12,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3a_opendry_dist20shp_6_210000000000000002.png" /></td><td>21,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3a_opendry_dist20shp_6_220000000000000003.png" /></td><td>22,000000000000000</td></tr></table>': layer_Level3a_opendry_dist20shp_6,'Level3b_openwet_dist20.shp<br /><table><tr><td style="text-align: center;"><img src="legend/Level3b_openwet_dist20shp_5_110000000000000000.png" /></td><td>11,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3b_openwet_dist20shp_5_120000000000000001.png" /></td><td>12,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3b_openwet_dist20shp_5_210000000000000002.png" /></td><td>21,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3b_openwet_dist20shp_5_220000000000000003.png" /></td><td>22,000000000000000</td></tr></table>': layer_Level3b_openwet_dist20shp_5,'Level3a_opendry_kattrup_dist20.shp<br /><table><tr><td style="text-align: center;"><img src="legend/Level3a_opendry_kattrup_dist20shp_4_110000000000000000.png" /></td><td>11,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3a_opendry_kattrup_dist20shp_4_120000000000000001.png" /></td><td>12,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3a_opendry_kattrup_dist20shp_4_210000000000000002.png" /></td><td>21,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3a_opendry_kattrup_dist20shp_4_220000000000000003.png" /></td><td>22,000000000000000</td></tr></table>': layer_Level3a_opendry_kattrup_dist20shp_4,'Level3b_openwet_kattrup_dist10.shp<br /><table><tr><td style="text-align: center;"><img src="legend/Level3b_openwet_kattrup_dist10shp_3_110000000000000000.png" /></td><td>11,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3b_openwet_kattrup_dist10shp_3_120000000000000001.png" /></td><td>12,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3b_openwet_kattrup_dist10shp_3_210000000000000002.png" /></td><td>21,000000000000000</td></tr><tr><td style="text-align: center;"><img src="legend/Level3b_openwet_kattrup_dist10shp_3_220000000000000003.png" /></td><td>22,000000000000000</td></tr></table>': layer_Level3b_openwet_kattrup_dist10shp_3,'Manual_opendry_std30y_ndvip10_level3a<br /><table><tr><td style="text-align: center;"><img src="legend/Manual_opendry_std30y_ndvip10_level3a_2_110.png" /></td><td>11</td></tr><tr><td style="text-align: center;"><img src="legend/Manual_opendry_std30y_ndvip10_level3a_2_121.png" /></td><td>12</td></tr><tr><td style="text-align: center;"><img src="legend/Manual_opendry_std30y_ndvip10_level3a_2_212.png" /></td><td>21</td></tr><tr><td style="text-align: center;"><img src="legend/Manual_opendry_std30y_ndvip10_level3a_2_223.png" /></td><td>22</td></tr></table>': layer_Manual_opendry_std30y_ndvip10_level3a_2,'Manual_openwet_std30y_ndvip10_level3b<br /><table><tr><td style="text-align: center;"><img src="legend/Manual_openwet_std30y_ndvip10_level3b_1_110.png" /></td><td>11</td></tr><tr><td style="text-align: center;"><img src="legend/Manual_openwet_std30y_ndvip10_level3b_1_121.png" /></td><td>12</td></tr><tr><td style="text-align: center;"><img src="legend/Manual_openwet_std30y_ndvip10_level3b_1_212.png" /></td><td>21</td></tr><tr><td style="text-align: center;"><img src="legend/Manual_openwet_std30y_ndvip10_level3b_1_223.png" /></td><td>22</td></tr></table>': layer_Manual_openwet_std30y_ndvip10_level3b_1,"google": layer_google_0,},{collapsed:false}).addTo(map);
+        setBounds();
+        </script>
+    </body>
+</html>
